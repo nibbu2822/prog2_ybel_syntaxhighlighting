@@ -5,9 +5,7 @@ import highlighting.core.SyntaxHighlighter;
 import highlighting.presets.MiniJavaTokens;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 // TODO: Implement a simple regex-based highlighting strategy. Unlike the scanning approach, this
 // strategy applies each token independently to the entire input text and collects all resulting
@@ -22,11 +20,9 @@ public class RegexHighlighter extends SyntaxHighlighter {
   // {@code HighlightRegion}s, and combine all of these regions into a single list.
   @Override
   public List<HighlightRegion> collectMatches(String text) {
-      List<HighlightRegion> regions = new ArrayList<HighlightRegion>();
+      List<HighlightRegion> regions = new ArrayList<>();
       for (Token t : MiniJavaTokens.defaultTokens()) {
-            for (HighlightRegion hr : t.test(text)) {
-                regions.add(hr);
-            }
+          regions.addAll(t.test(text));
       }
       return regions;
       //throw new UnsupportedOperationException("not implemented yetA");
