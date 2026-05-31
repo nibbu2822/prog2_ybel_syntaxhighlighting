@@ -1,9 +1,14 @@
 package highlighting.presets;
 
+import highlighting.regex.Token;
+import org.junit.jupiter.api.Test;
+
+import java.util.regex.Matcher;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class MiniJavaTokensTest {
-  /*
+
       private boolean matches(Token token, String text) {
           Matcher matcher = token.pattern().matcher(text);
           return matcher.find();
@@ -79,39 +84,39 @@ class MiniJavaTokensTest {
 
           assertTrue(matches(string, "\"https://example.com\""));
       }
-  */
-  // @Test
-  // void stringContainingBlockCommentMarkers() {
-  //   Token string = MiniJavaTokens.defaultTokens().get(0);
 
-  // assertTrue(matches(string, "\"/* not a comment */\""));
-  // }
+   @Test
+   void stringContainingBlockCommentMarkers() {
+     Token string = MiniJavaTokens.defaultTokens().get(0);
 
-  // @Test
-  // void blockCommentMatch() {
-  //    Token blockComment = MiniJavaTokens.defaultTokens().get(2);
+   assertTrue(matches(string, "\"/* not a comment */\""));
+   }
 
-  //    assertTrue(matches(blockComment, "/* comment text */"));
-  // }
+   @Test
+   void blockCommentMatch() {
+      Token blockComment = MiniJavaTokens.defaultTokens().get(2);
 
-  // @Test
-  // void javadocCommentMatch() {
-  //    Token javadoc = MiniJavaTokens.defaultTokens().get(3);
+      assertTrue(matches(blockComment, "/* comment text */"));
+   }
 
-  //    assertTrue(matches(javadoc, "/** documentation */"));
-  // }
+   @Test
+   void javadocCommentMatch() {
+      Token javadoc = MiniJavaTokens.defaultTokens().get(3);
 
-  // @Test
-  // void charLiteralMatch() {
-  //    Token charLiteral = MiniJavaTokens.defaultTokens().get(6);
+      assertTrue(matches(javadoc, "/** documentation */"));
+   }
 
-  //    assertTrue(matches(charLiteral, "'a'"));
-  // }
+   @Test
+   void charLiteralMatch() {
+      Token charLiteral = MiniJavaTokens.defaultTokens().get(6);
 
-  // @Test
-  // void typeMatch() {
-  //    Token type = MiniJavaTokens.defaultTokens().get(7);
+      assertTrue(matches(charLiteral, "'a'"));
+   }
 
-  //    assertTrue(matches(type, "int value = 5;"));
-  // }
+   @Test
+   void typeMatch() {
+      Token type = MiniJavaTokens.defaultTokens().get(7);
+
+      assertTrue(matches(type, "int value = 5;"));
+   }
 }
