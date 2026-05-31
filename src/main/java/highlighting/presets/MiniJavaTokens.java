@@ -33,12 +33,11 @@ public final class MiniJavaTokens {
         Token.of(Pattern.compile("@[a-zA-Z\\-]*"), MiniJavaColours.ANNOTATION_COLOUR),
         Token.of(
             Pattern.compile(
-                "\\b(package|import|class|extends|implements|public|private|protected|final|static|throw|return|null|new)\b"),
+                "\\b(package|import|class|extends|implements|public|private|protected|final|static|throw|return|null|new)\\b"),
             MiniJavaColours.KEYWORD_COLOUR),
         Token.of(Pattern.compile("'.'"), MiniJavaColours.CHAR_LITERAL_COLOUR),
         Token.of(
-            Pattern.compile(
-                "\\b(int|double|float|String|char|Character|boolean|void|long|short)\\b"),
+            Pattern.compile("\\b(int|double|float|String|char|boolean|void|long|short)\\b"),
             MiniJavaColours.TYPE_COLOUR),
         Token.of(Pattern.compile("[\\+\\-\\=\\*/%]"), MiniJavaColours.OPERATOR_COLOUR));
   }
