@@ -2,6 +2,8 @@ package highlighting.regex;
 
 import highlighting.core.HighlightRegion;
 import highlighting.core.SyntaxHighlighter;
+import highlighting.presets.MiniJavaTokens;
+import java.util.ArrayList;
 import java.util.List;
 
 // TODO: Implement a simple regex-based highlighting strategy. Unlike the scanning approach, this
@@ -17,14 +19,14 @@ public class RegexHighlighter extends SyntaxHighlighter {
   // {@code HighlightRegion}s, and combine all of these regions into a single list.
   @Override
   public List<HighlightRegion> collectMatches(String text) {
-    /*
+
     List<HighlightRegion> regions = new ArrayList<>();
     for (Token t : MiniJavaTokens.defaultTokens()) {
       regions.addAll(t.test(text));
     }
     return regions;
-    */
-    throw new UnsupportedOperationException("not implemented yetA");
+
+    // throw new UnsupportedOperationException("not implemented yetA");
   }
 
   // TODO: Resolve overlapping regions. Assume that {@code regions} has been normalised and sorted.
@@ -33,7 +35,7 @@ public class RegexHighlighter extends SyntaxHighlighter {
   // position are preferred because of the sorting in {@code normalize}.
   @Override
   public List<HighlightRegion> resolveConflicts(List<HighlightRegion> regions) {
-    /*
+
     List<HighlightRegion> normalized = new ArrayList<>();
     for (HighlightRegion hr : regions) {
       boolean input = true;
@@ -48,7 +50,7 @@ public class RegexHighlighter extends SyntaxHighlighter {
       }
     }
     return normalized;
-    */
-    throw new UnsupportedOperationException("not implemented yetB");
+
+    // throw new UnsupportedOperationException("not implemented yetB");
   }
 }
