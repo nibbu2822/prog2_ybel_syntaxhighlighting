@@ -38,6 +38,7 @@ public final class MiniJavaTokens {
         Token.of(Pattern.compile("'.'"), MiniJavaColours.CHAR_LITERAL_COLOUR),
         Token.of(
             Pattern.compile("int|double|float|String|char|Character|boolean|void|long|short"),
-            MiniJavaColours.TYPE_COLOUR));
+            MiniJavaColours.TYPE_COLOUR),
+      Token.of(Pattern.compile("[\\+\\-\\=\\*/%]"), MiniJavaColours.OPERATOR_COLOUR));
   }
 }
