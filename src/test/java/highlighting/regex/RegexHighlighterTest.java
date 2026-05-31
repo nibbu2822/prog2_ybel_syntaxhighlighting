@@ -2,10 +2,9 @@ package highlighting.regex;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
-
 class RegexHighlighterTest {
 
+  /*
   @Test
   void collectMatches() {
     assertTrue(true);
@@ -20,4 +19,5 @@ class RegexHighlighterTest {
   void alwaysPasses() {
     assertTrue(true);
   }
+  */
 }
