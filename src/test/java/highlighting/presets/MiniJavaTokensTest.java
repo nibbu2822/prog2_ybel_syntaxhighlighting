@@ -2,116 +2,119 @@ package highlighting.presets;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import highlighting.regex.Token;
+import java.util.regex.Matcher;
+import org.junit.jupiter.api.Test;
+
 class MiniJavaTokensTest {
-  /*
-      private boolean matches(Token token, String text) {
-          Matcher matcher = token.pattern().matcher(text);
-          return matcher.find();
-      }
 
-      @Test
-      void keywordAtBeginning() {
-          Token keyword = MiniJavaTokens.defaultTokens().get(5);
+  private boolean matches(Token token, String text) {
+    Matcher matcher = token.pattern().matcher(text);
+    return matcher.find();
+  }
 
-          assertTrue(matches(keyword, "class Test {}"));
-      }
+  @Test
+  void keywordAtBeginning() {
+    Token keyword = MiniJavaTokens.defaultTokens().get(5);
 
-      @Test
-      void keywordInMiddle() {
-          Token keyword = MiniJavaTokens.defaultTokens().get(5);
+    assertTrue(matches(keyword, "class Test {}"));
+  }
 
-          assertTrue(matches(keyword, "public class Test {}"));
-      }
+  @Test
+  void keywordInMiddle() {
+    Token keyword = MiniJavaTokens.defaultTokens().get(5);
 
-      @Test
-      void keywordAtEnd() {
-          Token keyword = MiniJavaTokens.defaultTokens().get(5);
+    assertTrue(matches(keyword, "public class Test {}"));
+  }
 
-          assertTrue(matches(keyword, "myKeyword return"));
-      }
+  @Test
+  void keywordAtEnd() {
+    Token keyword = MiniJavaTokens.defaultTokens().get(5);
 
-      @Test
-      void multipleKeywordsInOneText() {
-          Token keyword = MiniJavaTokens.defaultTokens().get(5);
+    assertTrue(matches(keyword, "myKeyword return"));
+  }
 
-          Matcher matcher = keyword.pattern().matcher(
-              "public class Test { return null; }");
+  @Test
+  void multipleKeywordsInOneText() {
+    Token keyword = MiniJavaTokens.defaultTokens().get(5);
 
-          int count = 0;
-          while (matcher.find()) {
-              count++;
-          }
+    Matcher matcher = keyword.pattern().matcher("public class Test { return null; }");
 
-          assertEquals(4, count);
-      }
+    int count = 0;
+    while (matcher.find()) {
+      count++;
+    }
 
-      @Test
-      void noKeywordFound() {
-          Token keyword = MiniJavaTokens.defaultTokens().get(5);
+    assertEquals(4, count);
+  }
 
-          assertFalse(matches(keyword, "hello world"));
-      }
+  @Test
+  void noKeywordFound() {
+    Token keyword = MiniJavaTokens.defaultTokens().get(5);
 
-      @Test
-      void annotationAtLineStart() {
-          Token annotation = MiniJavaTokens.defaultTokens().get(4);
+    assertFalse(matches(keyword, "hello world"));
+  }
 
-          assertTrue(matches(annotation, "@Override"));
-      }
+  @Test
+  void annotationAtLineStart() {
+    Token annotation = MiniJavaTokens.defaultTokens().get(4);
 
-      @Test
-      void annotationWithLeadingWhitespace() {
-          Token annotation = MiniJavaTokens.defaultTokens().get(4);
+    assertTrue(matches(annotation, "@Override"));
+  }
 
-          assertTrue(matches(annotation, "    @Test"));
-      }
+  @Test
+  void annotationWithLeadingWhitespace() {
+    Token annotation = MiniJavaTokens.defaultTokens().get(4);
 
-      @Test
-      void lineCommentContainingKeyword() {
-          Token comment = MiniJavaTokens.defaultTokens().get(1);
+    assertTrue(matches(annotation, "    @Test"));
+  }
 
-          assertTrue(matches(comment, "// public class return"));
-      }
+  @Test
+  void lineCommentContainingKeyword() {
+    Token comment = MiniJavaTokens.defaultTokens().get(1);
 
-      @Test
-      void stringContainingDoubleSlash() {
-          Token string = MiniJavaTokens.defaultTokens().get(0);
+    assertTrue(matches(comment, "// public class return"));
+  }
 
-          assertTrue(matches(string, "\"https://example.com\""));
-      }
-  */
-  // @Test
-  // void stringContainingBlockCommentMarkers() {
-  //   Token string = MiniJavaTokens.defaultTokens().get(0);
+  @Test
+  void stringContainingDoubleSlash() {
+    Token string = MiniJavaTokens.defaultTokens().get(0);
 
-  // assertTrue(matches(string, "\"/* not a comment */\""));
-  // }
+    assertTrue(matches(string, "\"https://example.com\""));
+  }
 
-  // @Test
-  // void blockCommentMatch() {
-  //    Token blockComment = MiniJavaTokens.defaultTokens().get(2);
+  @Test
+  void stringContainingBlockCommentMarkers() {
+    Token string = MiniJavaTokens.defaultTokens().get(0);
 
-  //    assertTrue(matches(blockComment, "/* comment text */"));
-  // }
+    assertTrue(matches(string, "\"/* not a comment */\""));
+  }
 
-  // @Test
-  // void javadocCommentMatch() {
-  //    Token javadoc = MiniJavaTokens.defaultTokens().get(3);
+  @Test
+  void blockCommentMatch() {
+    Token blockComment = MiniJavaTokens.defaultTokens().get(2);
 
-  //    assertTrue(matches(javadoc, "/** documentation */"));
-  // }
+    assertTrue(matches(blockComment, "/* comment text */"));
+  }
 
-  // @Test
-  // void charLiteralMatch() {
-  //    Token charLiteral = MiniJavaTokens.defaultTokens().get(6);
+  @Test
+  void javadocCommentMatch() {
+    Token javadoc = MiniJavaTokens.defaultTokens().get(3);
 
-  //    assertTrue(matches(charLiteral, "'a'"));
-  // }
+    assertTrue(matches(javadoc, "/** documentation */"));
+  }
 
-  // @Test
-  // void typeMatch() {
-  //    Token type = MiniJavaTokens.defaultTokens().get(7);
+  @Test
+  void charLiteralMatch() {
+    Token charLiteral = MiniJavaTokens.defaultTokens().get(6);
 
-  //    assertTrue(matches(type, "int value = 5;"));
-  // }
+    assertTrue(matches(charLiteral, "'a'"));
+  }
+
+  @Test
+  void typeMatch() {
+    Token type = MiniJavaTokens.defaultTokens().get(7);
+
+    assertTrue(matches(type, "int value = 5;"));
+  }
 }
