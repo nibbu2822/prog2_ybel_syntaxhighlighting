@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RegexHighlighterTest {
 
-  /*
+
   @Test
   void collectMatches() {
     assertTrue(true);
@@ -19,5 +19,4 @@ class RegexHighlighterTest {
   void alwaysPasses() {
     assertTrue(true);
   }
-  */
 }
