@@ -2,8 +2,9 @@ package highlighting.regex;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RegexHighlighterTest {
+import org.junit.jupiter.api.Test;
 
+class RegexHighlighterTest {
 
   @Test
   void collectMatches() {

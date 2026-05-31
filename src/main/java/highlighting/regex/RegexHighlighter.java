@@ -3,7 +3,6 @@ package highlighting.regex;
 import highlighting.core.HighlightRegion;
 import highlighting.core.SyntaxHighlighter;
 import highlighting.presets.MiniJavaTokens;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class RegexHighlighter extends SyntaxHighlighter {
     }
     return regions;
 
-    //throw new UnsupportedOperationException("not implemented yetA");
+    // throw new UnsupportedOperationException("not implemented yetA");
   }
 
   // TODO: Resolve overlapping regions. Assume that {@code regions} has been normalised and sorted.
@@ -52,6 +51,6 @@ public class RegexHighlighter extends SyntaxHighlighter {
     }
     return normalized;
 
-    //throw new UnsupportedOperationException("not implemented yetB");
+    // throw new UnsupportedOperationException("not implemented yetB");
   }
 }
