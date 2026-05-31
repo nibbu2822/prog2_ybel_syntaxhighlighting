@@ -40,7 +40,7 @@ public class RegexHighlighter extends SyntaxHighlighter {
     for (HighlightRegion hr : regions) {
       boolean input = true;
       for (HighlightRegion hr2 : normalized) {
-        if ((hr2.start() <= hr.start()) && (hr2.end() >= hr.start())) {
+        if ((hr2.start() <= hr.start()) && (hr2.end() >= hr.start()) && (hr2.end() > hr.start())) {
           input = false;
           break;
         }
